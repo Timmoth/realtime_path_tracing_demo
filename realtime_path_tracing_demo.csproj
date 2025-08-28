@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <EmccFlags>-s FULL_ES3=1 -lopenal -lGL -s</EmccFlags>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <PublishTrimmed>true</PublishTrimmed>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <NativeFileReference Include="Native/libEGL.c" ScanForPInvokes="true"/>
+        <NativeFileReference Include="Native/openal32.c" ScanForPInvokes="true"/>
+        <NativeFileReference Include="Native/emscripten.c" ScanForPInvokes="true"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Silk.NET.OpenGLES" Version="2.21.0"/>
+
+        <TrimmableAssembly Include="Silk.NET.Maths"/>
+    </ItemGroup>
+</Project>

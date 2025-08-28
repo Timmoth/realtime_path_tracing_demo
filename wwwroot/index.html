@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--  Licensed to the .NET Foundation under one or more agreements. -->
+<!-- The .NET Foundation licenses this file to you under the MIT license. -->
+<html>
+
+<head>
+    <title>wasmgl</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="./main.js" type='module'></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        canvas#canvas {
+            width: 100vw;
+            height: 100vh;
+            outline: none;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            canvas#canvas {
+                height: 100vh;
+                width: calc(100vh * (16 / 9));
+            }
+        }
+
+        @media (max-aspect-ratio: 4/3) {
+            canvas#canvas {
+                width: 100vw;
+                height: calc(100vw / (4 / 3));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas height="9" id="canvas" width="16">
+</canvas>
+</body>
+
+</html>
